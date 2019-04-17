@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+
+
+<header class = header>
+<center><h1> Easy Access </h1></center>
+</header>
+
+
+<button class="tablink" onclick="openPage('About', this, 'Coral')">About</button>
+<button class="tablink" onclick="openPage('To_Do_list', this, 'pink')">To Do list</button>
+<button class="tablink" onclick="openPage('Calculator', this, 'LightBlue')" id="defaultOpen">Calculator</button>
+<button class="tablink" onclick="openPage('Weight_Converter', this, 'Salmon')">Weight Converter</button>
+
+
+<div id="About" class="tabcontent">
+  <h2>About</h2>
+  <p>Welcome to Easy Access.Easy Access allows you to access your three frequently used applications at one place. <br>
+  Its a cool web-application where you can perform your data to day tasks at ease.<br>
+  <br>1. <strong>"To Do List" </strong> Application" =>  Use the "To do list" application to list out your tasks!<br>
+  <br>2. <strong>"Calculator" </strong> Application" =>  Use the "Calculator" application to perfrom your daily math! <br>
+  <br>3. <strong>"Weight Converter" </strong> Application" =>  Use the "Weight Converter" application to convert pounds into kilograms!<br>  
+  </p>
+</div>
+
+<div id="To_Do_list" class="tabcontent">
+  <h2>To Do list</h2>
+  <p>Use the "To do list" application to list out your tasks!</p>
+  <iframe src="todolist.html" height="500" width="500" style = "border:none" ></iframe>
+</div>
+
+<div id="Calculator" class="tabcontent">
+  <h3>Calculator</h3>
+  <p>Use the "Calculator" application to perfrom your daily math!</p> 
+  <iframe src="calculator.html" height="400" width="400" style = "border:none" ></iframe>
+</div>
+
+<div id="Weight_Converter" class="tabcontent">
+  <h3>Weight Converter</h3>
+  <p>Use the "Weight Converter" application to convert pounds into kilograms!</p>
+   <iframe src="converter.html" height="100%" width="100%" style = "border:none"  ></iframe>
+</div>
+
+
+<script src="home.js"></script>
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
